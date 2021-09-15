@@ -13,8 +13,8 @@ import com.api.student.entity.Student;
  *
  */
 public interface StudentService {
-    public List<Student> findAll();
-    public Student findById(int theId);
-    public void save(Student theEmployee);
-    public void deleteById(int theId); 
+    public List<Student> getAllStudent();
+    public Student findById(Long theId);
+    public void save(Student student);
+    public void delete(Long studentId); 
     }

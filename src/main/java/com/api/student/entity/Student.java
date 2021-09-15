@@ -11,19 +11,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 /**
  * @author 48 - Tran Trung Vinh - 18079461
  *
  */
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
+
 @Entity
 @Table(name="student")
 public class Student {
@@ -32,7 +27,7 @@ public class Student {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id")
-    private int id;
+    private Long id;
 
     @Column(name="first_name")
     private String firstName;
@@ -42,5 +37,28 @@ public class Student {
 
     @Column(name="email")
     private String email;
+
+	public Student() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Student(Long id, String firstName, String lastName, String email) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+	}
+
+	public Student(String firstName, String lastName, String email) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+	}
+
+
+    
 
 }
